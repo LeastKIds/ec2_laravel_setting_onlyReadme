@@ -142,23 +142,28 @@ sudo apt upgrade
 
 1. Nginx 설치
    1. sudo apt-**get** install nginx
+   
 2. Php 설치
    1. sudo apt-get install php7.4
    2. sudo apt install php-fpm
    3. sudo apt install php-mysql php-zip php-gd
    4. sudo apt install php-mbstring php-xml
    5. sudo apt-get install php-curl
+   
 3. Git 설치
    1. sudo apt-**get** install git
+   
 4. composer 설치
    1. curl -sS https://getcomposer.org/installer | php
    2. sudo mv composer.phar /usr/local/bin/composer
    3. chmod +x /usr/local/bin/composer
+   
 5. Nodes 설치
    1. sudo apt-get install curl
    2. curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
    3. sudo apt-get install -y nodejs
    4. sudo apt-get install build-essential
+   
 6. Mysql 설치
    1. sudo apt-get install mysql-server
    2. sudo systemctl start mysql
@@ -168,6 +173,7 @@ sudo apt upgrade
    6. grant all privileges on *.* to 'voca'@'%' with grant option;
    7. flush privileges;
    8. create database vocabulary;
+   
 7. apach 삭제
    1. sudo service apache2 stop
    2. sudo apt-get remove apache2*
@@ -176,7 +182,9 @@ sudo apt upgrade
    5. sudo service apache-htcacheclean stop (오류 떠도 넘어가셈)
    6. sudo apt-get --purge remove apache* 
    7. sudo apt-get autoremove
+   
 7. git 으로 clone 하기
+   
    1. cd
    2. git clone 주소
    3. cd ./라라벨폴더
@@ -186,6 +194,31 @@ sudo apt upgrade
    7. npm install
    8. php artisan key:generate
    9. php artisan migrate
+   
 9. nginx 설정
+
    1. cd /etc/nginx/sites-available
-   2. 
+   2. https://laravel.kr/docs/8.x/deployment
+      1. 여기서 server_name [ec2 아이피]
+      2. root [자기 라라벨 public 폴더 경로]
+   3. sudo systemctl restart nginx
+
+10. 권한 설정(만약 권한 문제 생기면)
+
+   1. 라라벨 폴더로 이동
+
+   2. mkdir -p bootstrap/cache
+
+   3. chown -R www-data:www-data bootstrap/cache 
+
+   4. mkdir -p storage/logs
+
+   5. mkdir -p storage/framework/cache 
+
+   6. mkdir -p storage/framework/sessions
+
+   7. mkdir -p storage/framework/views 
+
+   8. chown -R www-data:www-data storage
+
+      
