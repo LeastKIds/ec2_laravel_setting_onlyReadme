@@ -191,9 +191,11 @@ sudo apt upgrade
    4. cp .env.exemple .env
    5. .env 파일 수정
    6. composer update
-   7. npm install
-   8. php artisan key:generate
-   9. php artisan migrate
+   7. composer install
+   8. npm install
+   9. npm run dev
+   10. php artisan key:generate
+   11. php artisan migrate
    
 9. nginx 설정
 
