@@ -202,6 +202,8 @@ sudo apt upgrade
 9. nginx 설정
 
    1. cd /etc/nginx/sites-available
+   1. sudo cp default default.backup (혹시 모르니 백업 본 생성)
+   1. sudo vi default
    2. https://laravel.kr/docs/8.x/deployment
       1. 여기서 server_name [ec2 아이피]
       2. root [자기 라라벨 public 폴더 경로]
