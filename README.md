@@ -1,3 +1,5 @@
+# 아래쪽에 우분투 버전을 이용하는 걸 추천
+
 # ec2_laravel_setting_onlyReadme
 
 1. Php 7.3 버전 이상으로 설치
@@ -170,7 +172,7 @@ sudo apt upgrade
    3. sudo systemctl enable mysql
    4. sudo mysql -u root -p(비밀번호는 없거나, root)
    5. create user 'voca'@'%' identified by 'voca';
-   6. grant all privileges on *.* to 'voca'@'%' with grant option;
+   6. ``` grant all privileges on *.* to 'voca'@'%' with grant option;```
    7. flush privileges;
    8. create database vocabulary;
    
@@ -211,7 +213,7 @@ sudo apt upgrade
 
    2. mkdir -p bootstrap/cache
 
-   3. chown -R www-data:www-data bootstrap/cache 
+   3. sudo chown -R www-data:www-data bootstrap/cache 
 
    4. mkdir -p storage/logs
 
@@ -221,6 +223,6 @@ sudo apt upgrade
 
    7. mkdir -p storage/framework/views 
 
-   8. chown -R www-data:www-data storage
+   8. sudo chown -R www-data:www-data storage
 
       
